@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Predictor</title>
+</head>
+<body>
+
+<h1>House Price Prediction</h1>
+
+<form action="/predict" method="POST">
+
+    <input type="number" step="any" name="longitude" placeholder="Longitude" required><br><br>
+    <input type="number" step="any" name="latitude" placeholder="Latitude" required><br><br>
+    <input type="number" name="housing_median_age" placeholder="Housing Age" required><br><br>
+    <input type="number" name="total_rooms" placeholder="Total Rooms" required><br><br>
+    <input type="number" name="total_bedrooms" placeholder="Total Bedrooms" required><br><br>
+    <input type="number" name="population" placeholder="Population" required><br><br>
+    <input type="number" name="households" placeholder="Households" required><br><br>
+    <input type="number" step="any" name="median_income" placeholder="Median Income" required><br><br>
+
+    <select name="ocean_proximity">
+        <option value="INLAND">INLAND</option>
+        <option value="NEAR BAY">NEAR BAY</option>
+        <option value="NEAR OCEAN">NEAR OCEAN</option>
+        <option value="ISLAND">ISLAND</option>
+        <option value="<1H OCEAN"><1H OCEAN</option>
+    </select><br><br>
+
+    <button type="submit">Predict</button>
+
+</form>
+
+{% if prediction %}
+    <h2>{{ prediction }}</h2>
+{% endif %}
+
+</body>
+</html>
